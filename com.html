@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Committee – GSC Alumni Association</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Full Page Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #222;
+            color: #fff;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+        .top-bar .upcoming {
+            background-color: #f39c12;
+            padding: 4px 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .top-bar .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #e2e2e2;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .brand a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+        .brand .logo-placeholder {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1.1;
+        }
+        .brand span {
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        /* Nav Desktop */
+        nav { display: none; }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-btn {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            padding: 20px 5%;
+            border-bottom: 1px solid #ddd;
+        }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a {
+            padding: 10px 0;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* Title Banner */
+        .title-banner {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 20px 5%;
+            padding: 15px;
+            text-align: center;
+        }
+        .title-banner h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Content Section */
+        .content { padding: 0 5% 40px 5%; }
+        .content h2 { color: #006666; font-size: 20px; margin-bottom: 5px; }
+        .content h3 { font-size: 16px; color: #444; margin-bottom: 20px; }
+
+        /* Responsive Table */
+        table { width: 100%; border-collapse: collapse; }
+        thead { display: none; } /* Hide headers on mobile */
+        
+        tr {
+            display: block;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        td {
+            display: block;
+            text-align: right;
+            padding: 8px 5px;
+            border: none;
+            font-size: 14px;
+            position: relative;
+        }
+        td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 5px;
+            width: 45%;
+            text-align: left;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        .name-cell { color: #000; font-weight: bold; }
+
+        /* Join Banner */
+        .join-banner {
+            width: 100%;
+            background-color: #fdfdfd;
+            background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px), radial-gradient(#d1d1d1 0.5px, #fdfdfd 0.5px);
+            background-size: 20px 20px;
+            padding: 40px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        .join-info h4 { margin: 0; font-size: 22px; }
+        .btn-join {
+            background: #2c3e50;
+            color: #fff;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #bbb;
+            padding: 25px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+        footer a { color: #bbb; text-decoration: none; }
+        .zapuza-brand b { color: #f1c40f; }
+
+        /* Desktop Media Query */
+        @media (min-width: 768px) {
+            .brand .logo-placeholder { font-size: 26px; }
+            .brand span { font-size: 22px; }
+            nav { display: block; }
+            .mobile-btn { display: none; }
+            .title-banner { padding: 20px; margin: 30px 5%; }
+            .title-banner h1 { font-size: 24px; }
+            
+            table { display: table; }
+            thead { display: table-header-group; }
+            tr { display: table-row; border: none; }
+            td { display: table-cell; text-align: left; border: 1px solid #eee; padding: 12px; }
+            td::before { display: none; }
+            
+            .join-banner { flex-direction: row; text-align: left; }
+            footer { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="upcoming">Upcoming Events</div>
+        <div class="contact-links">
+            <a href="mailto:geoidstudycentre@gmail.com"><i class="fas fa-envelope"></i> geoidstudycentre@gmail.com</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="brand">
+            <a href="index.html">
+                <div class="logo-placeholder">GEOID STUDY CENTRE<br><span>ALUMNI ASSOCIATION</span></div>
+            </a>
+        </div>
+        <div class="mobile-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="#">Org. Structure ▾</a>
+            <a href="#">Members ▾</a>
+            <a href="#">News & Events ▾</a>
+            <a href="#">Activities</a>
+            <a href="#">Support Us</a>
+        </nav>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">About</a>
+        <a href="#">Org. Structure</a>
+        <a href="#">Members</a>
+        <a href="#">News & Events</a>
+        <a href="#">Activities</a>
+        <a href="#">Support Us</a>
+    </div>
+
+    <div class="title-banner">
+        <h1>Institution Committee</h1>
+    </div>
+
+    <div class="content">
+        <h2>Institution Committee</h2>
+        <h3>Institution Committee: 2021 – 2025</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Sr.</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Sr.">1.</td>
+                    <td data-label="Name" class="name-cell">Mr. Sukdeb Das, <span style="font-weight:normal;">CEO (Geoid Study Centre)</span></td>
+                    <td data-label="Designation">Chief executive officer</td>
+                    <td data-label="Phone No.">8207084112</td>
+                    <td data-label="Email">geoidstudycentre@gmail.com</td>
+                </tr>
+                <tr>
+                    <td data-label="Sr.">2.</td>
+                    <td data-label="Name" class="name-cell">Mr. Subhadip Satpati</td>
+                    <td data-label="Designation">Chief Technology Director</td>
+                    <td data-label="Phone No.">N/A</td>
+                    <td data-label="Email">satpatiwebdevloper@zohomail.in</td>
+                </tr>
+                <tr>
+                    <td data-label="Sr.">3.</td>
+                    <td data-label="Name" class="name-cell">Mrs. Susrita Giri</td>
+                    <td data-label="Designation">Alumns</td>
+                    <td data-label="Phone No.">N/A</td>
+                    <td data-label="Email">gsc.susritagiri@gmail.com</td>
+                </tr>
+                <tr>
+                    <td data-label="Sr.">4.</td>
+                    <td data-label="Name" class="name-cell">Mr. Sanjay Ranjit</td>
+                    <td data-label="Designation">Alumns</td>
+                    <td data-label="Phone No.">N/A</td>
+                    <td data-label="Email">sanjayranjit2025@hotmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="join-banner">
+        <div class="join-info">
+            <h4>Join as an Alumni Now</h4>
+            <p>Join the Alumni Association and reconnect with your alma mater! Sign up now and reconnect with the community!</p>
+        </div>
+        <a href="#" class="btn-join"><i class="fas fa-users"></i> Join Now</a>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Support Us</a>
+            <a href="#" class="active-nav">Join Us</a>
+        </div>
+        <div class="zapuza-brand">
+            Powered By <a href="#"><b>Subhadip Cyber Technology</b></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("mobileNav");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us – GEOID STUDY CENTRE ALUMNI ASSOCIATION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #4B4F58;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #3a3a3a;
+            line-height: 1.1;
+        }
+
+        .brand h1 span {
+            font-weight: 300;
+            font-size: 18px;
+        }
+
+        /* Desktop Nav */
+        nav {
+            display: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: 25px;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: block;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Mobile Drawer */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            padding: 20px 5%;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .content-section {
+            padding: 40px 5%;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #333;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive Bank Table */
+        .bank-details {
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+        }
+
+        thead {
+            display: none; /* Hide header on mobile */
+        }
+
+        tr {
+            display: block;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 15px;
+        }
+
+        td {
+            display: block;
+            text-align: right;
+            padding: 10px 15px;
+            border: none;
+            position: relative;
+            font-size: 14px;
+        }
+
+        td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 15px;
+            width: 50%;
+            text-align: left;
+            font-weight: bold;
+            color: #222;
+        }
+
+        td.bold-label {
+            display: none; /* Hide the label column on mobile because we use data-label */
+        }
+
+        /* Join Banner Section */
+        .join-banner-texture {
+            width: 100%;
+            background-color: #fdfdfd;
+            background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px), radial-gradient(#d1d1d1 0.5px, #fdfdfd 0.5px);
+            background-size: 20px 20px;
+            padding: 40px 5%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .join-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #222;
+        }
+
+        .btn-join {
+            background: #262626;
+            color: #ffffff;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 30px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-nav span {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .powered b {
+            color: #f1c40f;
+        }
+
+        /* Desktop Adjustments */
+        @media (min-width: 768px) {
+            .brand h1 { font-size: 26px; }
+            .brand h1 span { font-size: 22px; }
+            nav { display: block; }
+            .menu-btn { display: none; }
+            h2 { font-size: 32px; }
+            
+            table { display: table; }
+            thead { display: table-header-group; }
+            tr { display: table-row; border: none; }
+            td { display: table-cell; text-align: left; border: 1px solid #e5e5e5; padding: 15px 20px; }
+            td::before { display: none; }
+            td.bold-label { display: table-cell; font-weight: bold; width: 25%; color: #222; }
+
+            .join-banner-texture { flex-direction: row; text-align: left; justify-content: space-between; }
+            footer { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <a href="index.html">
+                <h1>GEOID STUDY CENTRE<br><span>ALUMNI ASSOCIATION</span></h1>
+            </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Events</a>
+            <a href="#">About Us</a>
+            <a href="#">Activities</a>
+            <a href="#" style="color:#f59223;">Support Us</a>
+        </nav>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="#">Events</a>
+        <a href="#">About Us</a>
+        <a href="#">Activities</a>
+        <a href="#">Support Us</a>
+    </div>
+
+    <div class="content-section">
+        <h2>SUPPORT US</h2>
+        
+        <div class="text-block">
+            <p>GEOID STUDY CENTRE ALUMNI ASSOCIATION -- SUPPORT FOR FOUNDATION</p>
+        </div>
+
+        <div class="bank-details">
+            <h3>A/C detail:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bold-label">Beneficiary Name</td>
+                        <td data-label="Beneficiary Name"><strong>GEOID STUDY CENTRE ALUMNI ASSOCIATION</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-label">Bank Name</td>
+                        <td data-label="Bank Name"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-label">Branch Address</td>
+                        <td data-label="Branch Address"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-label">Bank IFSC No</td>
+                        <td data-label="Bank IFSC No"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-label">Beneficiary A/C No</td>
+                        <td data-label="Beneficiary A/C No"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-label">Type of A/C</td>
+                        <td data-label="Type of A/C"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="join-banner-texture">
+        <div class="join-info">
+            <h3>Join as a Alumni Now</h3>
+            <p>As a member, you'll have the opportunity to network with former classmates, stay informed about college events and developments, and reconnect with the Geoid Study Centre community!</p>
+        </div>
+        <a href="/registration" class="btn-join">Join Now</a>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Support Us</a>
+            <a href="#"><span>Join Us</span></a>
+        </div>
+        <div class="powered">
+            Design & Developed By <b>Subhadip Cyber Technology</b>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("mobileNav");
+            nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
+
+</body>
+</html>
