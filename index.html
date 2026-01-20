@@ -15,149 +15,39 @@
         .news-section { background-color: #1a1a1a; color: #fff; }
         .gallery-box { background-color: #000; border-radius: 30px; border: 1px solid #333; }
         .btn-green { background-color: #5cb85c; color: white; }
-        /* Smooth transition for mobile menu */
+        
+        /* Mobile menu transitions */
         #mobile-menu { transition: max-height 0.3s ease-in-out; max-height: 0; overflow: hidden; }
         #mobile-menu.active { max-height: 500px; }
 
-        /* WhatsApp Preview Widget */
-.wa-widget {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 300px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    z-index: 1000;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-}
+        /* Scrolling Ad Animation */
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-150%); }
+        }
+        .scrolling-ad {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollText 20s linear infinite;
+        }
+        .scrolling-ad:hover {
+            animation-play-state: paused;
+        }
 
-.wa-header {
-    background-color: #075e54;
-    color: white;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+        /* WhatsApp Widget */
+        .wa-widget { position: fixed; bottom: 25px; right: 25px; width: 300px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 1000; overflow: hidden; }
+        .wa-header { background-color: #075e54; color: white; padding: 15px; display: flex; align-items: center; gap: 12px; }
+        .wa-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; }
+        .wa-online-dot { width: 10px; height: 10px; background: #4ed858; border-radius: 50%; display: inline-block; margin-right: 5px; }
+        .wa-body { padding: 20px; background-color: #e5ddd5; background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcd2de2.png'); }
+        .wa-message { background: white; padding: 10px 15px; border-radius: 0 15px 15px 15px; font-size: 14px; color: #333; line-height: 1.4; margin-bottom: 15px; }
+        .wa-btn { background-color: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .wa-btn:hover { background-color: #128c7e; }
 
-.wa-avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-.wa-online-dot {
-    width: 10px;
-    height: 10px;
-    background: #4ed858;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.wa-body {
-    padding: 20px;
-    background-color: #e5ddd5; /* WhatsApp chat background color */
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcd2de2.png');
-}
-
-.wa-message {
-    background: white;
-    padding: 10px 15px;
-    border-radius: 0 15px 15px 15px;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.4;
-    margin-bottom: 15px;
-}
-
-.wa-btn {
-    background-color: #25d366;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.wa-btn:hover {
-    background-color: #128c7e;
-}
-
-/* Mobile responsive */
-@media (max-width: 480px) {
-    .wa-widget {
-        width: 260px;
-        right: 15px;
-        bottom: 15px;
-    }
-}
-
-/* Video Popup Overlay */
-#video-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-/* Popup Container */
-.video-popup-container {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    background: #000;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 255, 128, 0.3); /* Green glow matching GEOID */
-}
-
-/* Close Button */
-.close-video-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 2001;
-    transition: 0.3s;
-}
-
-.close-video-popup:hover {
-    color: #ff4500;
-    transform: scale(1.2);
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-}
-
-.video-wrapper iframe, .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+        /* Puja Popup Styles */
+        #video-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .video-popup-container { position: relative; width: 90%; max-width: 500px; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 0 30px rgba(255, 165, 0, 0.4); border: 3px solid #ff9800; }
+        .close-video-popup { position: absolute; top: 10px; right: 15px; color: #333; font-size: 30px; cursor: pointer; z-index: 2001; }
     </style>
 </head>
 <body>
@@ -165,23 +55,25 @@
 <div id="video-popup-overlay">
     <div class="video-popup-container">
         <span class="close-video-popup" onclick="closePopup()">&times;</span>
-        <div class="video-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Qaz6k9ov5k0?si=1ltraQR_TA1cae25" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="bg-white p-4 text-center">
-            <h3 class="font-bold text-lg text-gray-800">Special Admission Open for 2026!</h3>
-            <p class="text-sm text-gray-500 mb-4">Join GEOID STUDY CENTRE and excel in your career.</p>
-            <a href="join.html" class="bg-orange-500 text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition">Register Now</a>
+        <img src="https://img.freepik.com/free-vector/happy-vasant-panchami-indian-festival-background_1035-25661.jpg" class="w-full h-56 object-cover" alt="Saraswati Puja">
+        <div class="bg-white p-6 text-center">
+            <h3 class="font-bold text-2xl text-orange-600 mb-2">Happy Saraswati Puja!</h3>
+            <p class="text-gray-700 font-semibold mb-4">Special Admission Discount for 2026 Batch! Offer valid during the Puja season.</p>
+            <a href="join.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-600 transition inline-block">Register Now</a>
         </div>
     </div>
 </div>
 
-    <div class="top-bar py-2 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-2">
-        <div class="flex items-center gap-2">
-            <span class="bg-orange-500 px-2 py-1 font-bold">Upcoming Events:</span>
-            <span class="truncate">Alumni Registration Started</span>
+    <div class="top-bar py-2 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-2 overflow-hidden">
+        <div class="flex items-center gap-2 w-full md:w-2/3 overflow-hidden">
+            <span class="bg-orange-500 px-2 py-1 font-bold whitespace-nowrap z-10">ANNOUNCEMENT:</span>
+            <div class="relative w-full overflow-hidden">
+                <div class="scrolling-ad text-orange-400 font-bold">
+                    🙏 Happy Saraswati Puja to all Students & Alumni! 📚 Special Admission Open for 2026 Batch - Join GEOID STUDY CENTRE Today! 🎓 Reconnect with your peers through our Alumni Association.
+                </div>
+            </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-4 items-center"> 
+        <div class="flex flex-wrap justify-center gap-4 items-center whitespace-nowrap"> 
             <span><i class="fas fa-phone"></i> +91 8207084112</span>
             <span><i class="fas fa-envelope text-orange-500"></i> geoidstudycentre@gmail.com</span>
             <span class="bg-orange-500 px-3 py-1 rounded font-bold cursor-pointer"><i class="fas fa-user"></i> Join Us</span>
@@ -195,7 +87,6 @@
                 GEOID STUDY CENTRE<br><span class="text-xs md:text-sm text-gray-500 font-light">ALUMNI ASSOCIATION</span>
             </h1>
         </a>
-
         <nav class="hidden lg:flex gap-6 nav-text uppercase text-sm">
             <a href="#" class="hover:text-orange-500">About</a>
             <a href="#" class="hover:text-orange-500">Org. Structure <i class="fas fa-chevron-down text-xs"></i></a>
@@ -204,7 +95,6 @@
             <a href="#" class="hover:text-orange-500">Activities</a>
             <a href="#" class="hover:text-orange-500">Support Us</a>
         </nav>
-
         <button class="lg:hidden text-2xl" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </button>
@@ -293,7 +183,7 @@
                         <p class="text-[10px] text-gray-400">● December 26, 2024</p>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="text-center mt-8 flex flex-col md:flex-row items-center justify-center gap-4">
                 <button class="btn-green px-6 py-2 rounded text-sm font-bold w-full md:w-auto">Load More Gallery</button>
                 <button class="border border-white px-6 py-2 rounded text-sm font-bold w-full md:w-auto"><i class="fas fa-images"></i> All Image Gallery</button>
@@ -311,26 +201,21 @@
         </button>
     </section>
 
-<div class="wa-widget">
-    <div class="wa-header">
-        <img src="https://ik.imagekit.io/8v5m0fw9z/Black%20and%20White%20Circular%20Art%20&%20Design%20Logo.png" class="wa-avatar" alt="Support">
-        <div>
-            <p class="font-bold text-sm">GEOID Support</p>
-            <p class="text-xs opacity-80"><span class="wa-online-dot"></span>Online</p>
+    <div class="wa-widget">
+        <div class="wa-header">
+            <img src="https://ik.imagekit.io/8v5m0fw9z/Black%20and%20White%20Circular%20Art%20&%20Design%20Logo.png" class="wa-avatar" alt="Support">
+            <div>
+                <p class="font-bold text-sm">GEOID Support</p>
+                <p class="text-xs opacity-80"><span class="wa-online-dot"></span>Online</p>
+            </div>
+        </div>
+        <div class="wa-body">
+            <div class="wa-message">Hi there! 👋<br>How can we help you with the Alumni Association today?</div>
+            <a href="https://wa.me/918207084112?text=Hello!%20I%20have%20a%20query%20regarding%20the%20GEOID%20Alumni%20Association." target="_blank" class="wa-btn">
+                <i class="fab fa-whatsapp text-xl"></i> Start Chat
+            </a>
         </div>
     </div>
-    <div class="wa-body">
-        <div class="wa-message">
-            Hi there! 👋<br>
-            How can we help you with the Alumni Association today?
-        </div>
-        <a href="https://wa.me/918207084112?text=Hello!%20I%20have%20a%20query%20regarding%20the%20GEOID%20Alumni%20Association." 
-           target="_blank" 
-           class="wa-btn">
-            <i class="fab fa-whatsapp text-xl"></i> Start Chat
-        </a>
-    </div>
-</div>
 
     <footer class="bg-[#111] text-gray-400 py-8 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
         <div class="flex flex-wrap justify-center gap-6">
@@ -345,33 +230,23 @@
     </footer>
 
     <script>
-// Function to show the popup after 2 seconds
-window.onload = function() {
-    setTimeout(function() {
-        document.getElementById('video-popup-overlay').style.display = 'flex';
-    }, 2000); 
-};
+        // Popup delay logic
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('video-popup-overlay').style.display = 'flex';
+            }, 2000); 
+        };
 
-// Function to close the popup and stop the video
-function closePopup() {
-    const overlay = document.getElementById('video-popup-overlay');
-    const video = document.getElementById('ad-video');
-    
-    // Hide the overlay
-    overlay.style.display = 'none';
-    
-    // This stops the YouTube video from playing in the background
-    const videoSrc = video.src;
-    video.src = videoSrc; 
-}
+        function closePopup() {
+            document.getElementById('video-popup-overlay').style.display = 'none';
+        }
 
-// Close if user clicks outside the video box
-window.onclick = function(event) {
-    const overlay = document.getElementById('video-popup-overlay');
-    if (event.target == overlay) {
-        closePopup();
-    }
-};
+        window.onclick = function(event) {
+            const overlay = document.getElementById('video-popup-overlay');
+            if (event.target == overlay) {
+                closePopup();
+            }
+        };
 
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -380,4 +255,3 @@ window.onclick = function(event) {
     </script>
 </body>
 </html>
-
